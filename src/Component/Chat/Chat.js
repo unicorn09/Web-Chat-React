@@ -11,7 +11,7 @@ import Input from '../Input/Input';
 import './Chat.css';
 
 let socket;
-
+/*Harsh*/
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
