@@ -13,7 +13,7 @@ import Toolbar from '../Toolbar/index';
 import ToolbarButton from '../ToolbarButton/index';
 let socket;
 /*Harsh*/
-const Chat = ({ location }) => {
+const Chat = ({ location,props }) => {
 
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
