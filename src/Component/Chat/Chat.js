@@ -34,10 +34,10 @@ const Chat = ({ location,props }) => {
       if(error) {
         alert(error);
       }
-    });
+    })
     return ()=>{
-      socket.emit('disconnect');
-      socket.off();
+    socket.on('disconnect');
+    
     }
   }, [ENDPOINT, location.search]);
   
@@ -90,8 +90,7 @@ const Chat = ({ location,props }) => {
       
        <Compose message={message} setMessage={setMessage} sendMessage={sendMessage} leftItems={[<ToolbarButton key="emoji" icon="ion-ios-happy"/>]} rightItems={[
           <ToolbarButton key="image" icon="ion-ios-image" />,
-          <ToolbarButton key="audio" icon="ion-ios-mic" />,
-          <ToolbarButton key="send" icon="ion-ios-send"/>
+          <ToolbarButton key="audio" icon="ion-ios-mic" />
         ]}/>
       </div>
         </div>
