@@ -1,0 +1,52 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  background-color:#2083F7;
+  font-weight: 500;
+  border-bottom: 2px solid #000000;
+  position: sticky;
+  top: 0px;;
+}
+
+@supports (backdrop-filter: blur(20px)) {
+  .toolbar {
+    border-bottom: 2px solid #000000;
+    background-color: #2083F7;
+    backdrop-filter: blur(20px);
+  }
+}
+
+.toolbar-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.left-items, .right-items {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.right-items {
+  flex-direction: row-reverse;
+}
+
+.left-items .toolbar-button {
+  margin-right: 20px;
+}
+
+.right-items .toolbar-button {
+  margin-left: 20px;
+}
+
+.left-items .toolbar-button:last-child,
+.right-items .toolbar-button:last-child {
+  margin: 0;
+}

@@ -11,8 +11,13 @@
   display: flex;
   align-items: center;
   margin-bottom: 50%;
+  background:rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-right: 20px;
 }
-
+.activeContainer h2{
+  width: auto;
+}
 .activeItem {
   display: flex;
   align-items: center;
@@ -22,6 +27,8 @@
 
 .activeContainer img {
   padding-left: 10px;
+  padding-right: 10px;
+  
 }
 
 .textContainer h1 {
@@ -34,4 +41,7 @@
   .textContainer {
     display: none;
   }
+}
+.icononline{
+  margin-right: 5px;
 }

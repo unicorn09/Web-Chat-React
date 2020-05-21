@@ -7,18 +7,20 @@ import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
-
+import logo from '../../logo-white.svg';
 import './Chat.css';
-
+import Compose from '../Compose/index';
+import Toolbar from '../Toolbar/index';
+import ToolbarButton from '../ToolbarButton/index';
 let socket;
 
-const Chat = ({ location }) => {
+const Chat = ({ location,props }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'https://unicorn-chat-app-reactjs.herokuapp.com/';
+  const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -53,15 +55,43 @@ const Chat = ({ location }) => {
     }
   }
 
+
   return (
-    <div className="outerContainer">
-      <div className="container">
-          <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+    <div class="mainpage">   
+      <div class="chat-sidebar" >
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src={logo} alt=""/>
+        </div>
+      <div class="user-info">
+  <span class="user-name"><strong>{name}</strong></span>
+         
+          <div class="user-status">
+            <a href="#">
+              <div class="greendot"></div>
+              <span>Online</span></a>
+          </div>
+        </div>
+        <div class="borderline"></div>
+        <TextContainer users={users}/></div>
+        <div className="chatcont">
+        <Toolbar
+          leftItems={room}
+          rightItems={[
+            <a href="/"><i className="toolbar-button ion-ios-close"/></a>
+          ]}
+        />
+
+       <Messages messages={messages} name={name} />
+      
+      
+       <Compose message={message} setMessage={setMessage} sendMessage={sendMessage} leftItems={[<ToolbarButton key="emoji" icon="ion-ios-happy"/>]} rightItems={[
+          <ToolbarButton key="image" icon="ion-ios-image" />,
+          <ToolbarButton key="audio" icon="ion-ios-mic" />,
+          <ToolbarButton key="send" icon="ion-ios-send"/>
+        ]}/>
       </div>
-      <TextContainer users={users}/>
-    </div>
+        </div>
+ 
   );
 }
 
