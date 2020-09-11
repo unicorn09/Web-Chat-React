@@ -7,6 +7,9 @@
   position: sticky;
   top: 0px;;
 }
+.toolbar{
+z-index:30;
+}
 
 @supports (backdrop-filter: blur(20px)) {
   .toolbar {
