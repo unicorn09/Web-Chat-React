@@ -5,7 +5,8 @@
   font-weight: 500;
   border-bottom: 2px solid #000000;
   position: sticky;
-  top: 0px;;
+  top: 0px;
+  z-index:30;
 }
 
 @supports (backdrop-filter: blur(20px)) {
