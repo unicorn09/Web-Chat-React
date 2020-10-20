@@ -17,6 +17,7 @@ const TextContainer = ({ users }) => (
                   <div key={name} className="activeItem">
                     <img alt="Online Icon" class="icononline" src={onlineIcon}/>{'     '+name}
                   </div>
+                  <div></div>
                 ))}
               </h2>
             </div>
