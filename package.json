@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
     "emoji-picker-react": "^3.1.6",
-    "firebase": "^7.14.4",
+    "firebase": "^10.9.0",
     "firebaseui": "^4.5.0",
     "moment": "^2.25.3",
     "query-string": "^6.12.1",
